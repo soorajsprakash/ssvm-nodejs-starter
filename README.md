@@ -8,12 +8,11 @@
 * The JavaScript functions are in the `node` directory and they can access the Rust functions.
 * Use the `node node/app.js` command to run the application in Node.js.
 
-
 ## Use Docker to build and run
 
 ```
-$ docker pull secondstate/ssvm-nodejs-starter:v1
-$ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/ssvm-nodejs-starter:v1
+$ docker build -t ssvm-nodejs-final:v1
+$ docker run -p 3000:3000 --rm -it -v $(pwd):/app ssvm-nodejs-final:v1
 (docker) # cd /app
 (docker) # ssvmup build
 (docker) # node node/app.js
@@ -34,6 +33,16 @@ hello SSVM
         <img src="https://img.shields.io/endpoint?style=social&url=https%3A%2F%2Faka.ms%2Fvso-badge">
     </a>
 </p>
+
+###OR - (How to use to use)
+
+- run the app. 
+```
+- post file into localhost:3000/upload with form-data header using 'file' payload with your image
+$ curl http://localhost:3000/?name=SSVM
+- send.
+hello SSVM
+- save respond to png.
 
 ![SSVM](https://github.com/second-state/blog/blob/master/static/images/SSVM-edited-without-music.gif?raw=true)
 
