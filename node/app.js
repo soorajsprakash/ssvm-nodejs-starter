@@ -1,7 +1,8 @@
 const { myWatermark } = require('../pkg/ssvm_nodejs_starter_lib.js')
 
+const http = require('http')
+const url = require('url')
 const multer = require('multer')
-const port = 3000;
 const upload = multer({
   storage: multer.memoryStorage()
 }).single('file')
@@ -24,4 +25,8 @@ const server = http.createServer((req, res) => {
       }
     })
   }
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });

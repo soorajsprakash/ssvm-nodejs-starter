@@ -6,7 +6,6 @@ use image::{GenericImage,GenericImageView};
 use wasm_bindgen::prelude::*;
 use wee_alloc; 
 
-
 #[wasm_bindgen]
 pub fn say(s: &str) -> String {
   println!("The Rust function say() received {}", s);
@@ -26,7 +25,7 @@ pub fn myWatermark(watermark: &str,img_buf: &[u8]) -> String {
       x: w as f32 /10.0,
       y: h as f32 /10.0,
   };
-  let font = Vec::from(include_bytes!("../font/adelia.ttf") as &[u8]);
+  let font = Vec::from(include_bytes!("../fonts/adelia.ttf") as &[u8]);
   let font = Font::try_from_vec(font).unwrap();
 
   drawing::draw_text_mut(&mut img, image::Rgba([255u8, 255u8, 255u8, 255u8]), 0+(h/10),h/2, scale, &font, watermark);
